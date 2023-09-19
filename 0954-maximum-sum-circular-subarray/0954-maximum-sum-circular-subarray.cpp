@@ -12,8 +12,6 @@ public:
             cmax = max(nums[i], cmax + nums[i]);
             gmin = min(gmin, cmin);
             gmax = max(gmax, cmax);
-
-            cout<<"cmin = "<<cmin<<", cmax = "<<cmax<<", gmin = "<<gmin<<", gmax = "<<gmax<<endl;
         }
 
         if(total != gmin) return max(gmax, total-gmin);
