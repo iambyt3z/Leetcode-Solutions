@@ -7,7 +7,7 @@ public:
         int res=1, l=0, r=0;
         bool dir=true;
 
-        while(l<=r && r < len-1) {
+        while(r < len-1) {
             if(l==r) {
                 if(arr[r] > arr[r+1]) {
                     r++;
@@ -25,10 +25,9 @@ public:
                 }
 
                 res = max(res, r-l+1);
-                continue;
             }
 
-            if(
+            else if(
                 (dir && arr[r] < arr[r+1]) ||
                 (!dir && arr[r] > arr[r+1])
             ) {
