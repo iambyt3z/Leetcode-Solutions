@@ -2,7 +2,7 @@ class Solution {
 public:
     bool isNStraightHand(vector<int>& hand, int groupSize) {
         if(groupSize == 1) return true;
-        if(hand.size() < groupSize) return false;
+        // if(hand.size() < groupSize) return false;
 
         sort(hand.begin(), hand.end());
 
