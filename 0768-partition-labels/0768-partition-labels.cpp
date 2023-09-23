@@ -16,10 +16,7 @@ public:
         vector<int> res;
 
         while(i < s.length()) {
-            cout<<"s["<<i<<"] = "<<s[i]<<", range = "<<range<<", covered = "<<covered<<endl;
-
             if(i > range) {
-                cout<<(i - covered)<<" Pushed in res"<<endl;
                 res.push_back(i - covered);
                 covered = i;
             }
