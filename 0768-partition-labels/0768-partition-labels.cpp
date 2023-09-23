@@ -1,27 +1,23 @@
 class Solution {
 public:
     vector<int> partitionLabels(string s) {
-        unordered_map<char, pair<int, int>> mp;
-        for(int i=0; i<s.length(); i++) {
-            if(mp.find(s[i]) == mp.end()) {
-                mp[s[i]] = {i, i};
-                continue;
-            }
-
-            mp[s[i]].second = i;
+        unordered_map<char, int> mp;
+        int len = s.length();
+        for(int i=0; i<len; i++) {
+            mp[s[i]] = i;
         }
 
         int i = 0;
         int range = 0, covered = 0;
         vector<int> res;
 
-        while(i < s.length()) {
+        while(i < len) {
             if(i > range) {
                 res.push_back(i - covered);
                 covered = i;
             }
 
-            range = max(range, mp[s[i]].second);
+            range = max(range, mp[s[i]]);
             i++;
         }
 
