@@ -4,8 +4,8 @@ public:
         int len = cardPoints.size();
         int windowSum = 0, totalSum = 0;
 
-        for(int i=0; i<len; i++) {
-            if(i < len-k) windowSum += cardPoints[i];
+        for(int i=0; i<len-k; i++) {
+            windowSum += cardPoints[i];
             totalSum += cardPoints[i];
         }
 
@@ -16,6 +16,7 @@ public:
             l++;
             r++;
             windowSum += cardPoints[r];
+            totalSum += cardPoints[r];
 
             minWinSum = min(minWinSum, windowSum);
         }
