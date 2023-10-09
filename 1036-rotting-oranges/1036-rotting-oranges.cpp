@@ -28,7 +28,6 @@ public:
                 pair<int, int> point = q.front();
                 q.pop();
                 int x = point.first, y = point.second;
-                cout<<x<<" "<<y<<endl;
                 grid[x][y] = 2;
                 
                 if(x+1 < rowLen && grid[x+1][y] == 1 && !visited[{x+1, y}]) {
@@ -53,7 +52,6 @@ public:
             }
 
             res++;
-            cout<<res<<endl<<endl;
         }
 
         for(int i=0; i<rowLen; i++) {
