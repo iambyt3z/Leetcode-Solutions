@@ -32,7 +32,7 @@ public:
             visited[point] = true;
 
             for(auto &[nei_point, nei_cost]: adj[point]) {
-                if(visited.find(nei_point) == visited.end()) {
+                if(!visited.count(nei_point)) {
                     pq.push({nei_cost, nei_point});
                 }
             }
